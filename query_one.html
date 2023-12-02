@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="utf-8">
+<!-- Icon Links -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<!-- W3 schools CSS -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Original CSS -->
+<link rel="stylesheet" type="text/css" href="style.css">
+  <title>Football (Soccer) Database - Search Retrival</title>
+</head>
+<body>
+
+<div class="container text-center">
+
+<h1 class="mt-5">Football (Soccer) Database - Search Retrival</h1>
+
+
+    <label class="mt-5" for="search">Search by Name:</label>
+    <input type="text" id="search">
+    <button onclick="searchPlayer()">Search</button>
+
+    <div id="playerForm" style="display: none;">
+        <h4 class="m-5">Player Information</h4>
+        <form>
+            <p id="name"></p>
+            <p id="dob"></p>
+            <p id="club"></p>
+            <p id="position"></p>
+            <p id="sub-position"></p>
+            <p id="height"></p>
+            <p id="foot"></p>
+            <p id="cob"></p>
+            <p id="coc"></p>
+            <p id="value"></p>
+
+
+            <!-- Add more <p> tags as needed -->
+        </form>
+    </div>
+
+    <script>
+        // Embedded JSON data
+        var jsonData = [
+  {
+    "player_id": 598,
+    "first_name": "Timo",
+    "last_name": "Hildebrand",
+    "name": "Timo Hildebrand",
+    "last_season": 2014,
+    "current_club_id": 24,
+    "player_code": "timo-hildebrand",
+    "country_of_birth": "Germany",
+    "city_of_birth": "Worms",
+    "country_of_citizenship": "Germany",
+    "date_of_birth": "1979-04-05",
+    "sub_position": "Goalkeeper",
+    "position": "Goalkeeper",
+    "foot": "",
+    "height_in_cm": "",
+    "market_value_in_eur": "",
+    "highest_market_value_in_eur": 10000000,
+    "contract_expiration_date": "",
+    "agent_name": "",
+    "image_url": "https://img.a.transfermarkt.technology/portrait/header/598-1540373444.jpg?lm=1",
+    "url": "https://www.transfermarkt.co.uk/timo-hildebrand/profil/spieler/598",
+    "current_club_domestic_competition_id": "L1",
+    "current_club_name": "Eintracht Frankfurt"
+  },
+  {
+    "player_id": 670,
+    "first_name": "Martin",
+    "last_name": "Petrov",
+    "name": "Martin Petrov",
+    "last_season": 2012,
+    "current_club_id": 714,
+    "player_code": "martin-petrov",
+    "country_of_birth": "Bulgaria",
+    "city_of_birth": "Vratsa",
+    "country_of_citizenship": "Bulgaria",
+    "date_of_birth": "1979-01-15",
+    "sub_position": "Left Winger",
+    "position": "Attack",
+    "foot": "",
+    "height_in_cm": "",
+    "market_value_in_eur": "",
+    "highest_market_value_in_eur": 12000000,
+    "contract_expiration_date": "",
+    "agent_name": "IFM",
+    "image_url": "https://img.a.transfermarkt.technology/portrait/header/670-1656218742.png?lm=1",
+    "url": "https://www.transfermarkt.co.uk/martin-petrov/profil/spieler/670",
+    "current_club_domestic_competition_id": "ES1",
+    "current_club_name": "RCD Espanyol Barcelona"
+  },
+  {
+    "player_id": 1323,
+    "first_name": "Martin",
+    "last_name": "Amedick",
+    "name": "Martin Amedick",
+    "last_season": 2012,
+    "current_club_id": 24,
+    "player_code": "martin-amedick",
+    "country_of_birth": "Germany",
+    "city_of_birth": "Paderborn",
+    "country_of_citizenship": "Germany",
+    "date_of_birth": "1982-09-06",
+    "sub_position": "Centre-Back",
+    "position": "Defender",
+    "foot": "",
+    "height_in_cm": "",
+    "market_value_in_eur": "",
+    "highest_market_value_in_eur": 2750000,
+    "contract_expiration_date": "",
+    "agent_name": "",
+    "image_url": "https://img.a.transfermarkt.technology/portrait/header/1323-1544181603.jpg?lm=1",
+    "url": "https://www.transfermarkt.co.uk/martin-amedick/profil/spieler/1323",
+    "current_club_domestic_competition_id": "L1",
+    "current_club_name": "Eintracht Frankfurt"
+  },
+  {
+    "player_id": 3195,
+    "first_name": "Jermaine",
+    "last_name": "Pennant",
+    "name": "Jermaine Pennant",
+    "last_season": 2013,
+    "current_club_id": 512,
+    "player_code": "jermaine-pennant",
+    "country_of_birth": "England",
+    "city_of_birth": "Nottingham",
+    "country_of_citizenship": "England",
+    "date_of_birth": "1983-01-15",
+    "sub_position": "Right Winger",
+    "position": "Attack",
+    "foot": "right",
+    "height_in_cm": 173,
+    "market_value_in_eur": "",
+    "highest_market_value_in_eur": 10500000,
+    "contract_expiration_date": "",
+    "agent_name": "Andrew Sky",
+    "image_url": "https://img.a.transfermarkt.technology/portrait/header/s_3195_512_2013_03_08_1.jpg?lm=1",
+    "url": "https://www.transfermarkt.co.uk/jermaine-pennant/profil/spieler/3195",
+    "current_club_domestic_competition_id": "GB1",
+    "current_club_name": "Stoke City"
+  },
+  {
+    "player_id": 3259,
+    "first_name": "Damien",
+    "last_name": "Duff",
+    "name": "Damien Duff",
+    "last_season": 2013,
+    "current_club_id": 931,
+    "player_code": "damien-duff",
+    "country_of_birth": "Ireland",
+    "city_of_birth": "Ballyboden",
+    "country_of_citizenship": "Ireland",
+    "date_of_birth": "1979-03-02",
+    "sub_position": "Right Midfield",
+    "position": "Midfield",
+    "foot": "left",
+    "height_in_cm": 177,
+    "market_value_in_eur": "",
+    "highest_market_value_in_eur": 17000000,
+    "contract_expiration_date": "",
+    "agent_name": "",
+    "image_url": "https://img.a.transfermarkt.technology/portrait/header/3259-1410962728.jpg?lm=1",
+    "url": "https://www.transfermarkt.co.uk/damien-duff/profil/spieler/3259",
+    "current_club_domestic_competition_id": "GB1",
+    "current_club_name": "Fulham FC"
+  },
+  {
+    "player_id": 3614,
+    "first_name": "Tony",
+    "last_name": "Hibbert",
+    "name": "Tony Hibbert",
+    "last_season": 2015,
+    "current_club_id": 29,
+    "player_code": "tony-hibbert",
+    "country_of_birth": "England",
+    "city_of_birth": "Liverpool",
+    "country_of_citizenship": "England",
+    "date_of_birth": "1981-02-20",
+    "sub_position": "Right-Back",
+    "position": "Defender",
+    "foot": "right",
+    "height_in_cm": 173,
+    "market_value_in_eur": "",
+    "highest_market_value_in_eur": 4500000,
+    "contract_expiration_date": "",
+    "agent_name": "",
+    "image_url": "https://img.a.transfermarkt.technology/portrait/header/s_3614_29_2009_1.jpg?lm=1",
+    "url": "https://www.transfermarkt.co.uk/tony-hibbert/profil/spieler/3614",
+    "current_club_domestic_competition_id": "GB1",
+    "current_club_name": "Everton FC"
+  },
+  {
+    "player_id": 3804,
+    "first_name": "Carlo",
+    "last_name": "Nash",
+    "name": "Carlo Nash",
+    "last_season": 2013,
+    "current_club_id": 1123,
+    "player_code": "carlo-nash",
+    "country_of_birth": "England",
+    "city_of_birth": "Bolton",
+    "country_of_citizenship": "England",
+    "date_of_birth": "1973-09-13",
+    "sub_position": "Goalkeeper",
+    "position": "Goalkeeper",
+    "foot": "right",
+    "height_in_cm": 197,
+    "market_value_in_eur": "",
+    "highest_market_value_in_eur": 800000,
+    "contract_expiration_date": "",
+    "agent_name": "",
+    "image_url": "https://img.a.transfermarkt.technology/portrait/header/s_3804_512_2013_03_08_1.jpg?lm=1",
+    "url": "https://www.transfermarkt.co.uk/carlo-nash/profil/spieler/3804",
+    "current_club_domestic_competition_id": "GB1",
+    "current_club_name": "Norwich City"
+  },
+  {
+    "player_id": 4042,
+    "first_name": "Brad",
+    "last_name": "Jones",
+    "name": "Brad Jones",
+    "last_season": 2017,
+    "current_club_id": 234,
+    "player_code": "brad-jones",
+    "country_of_birth": "Australia",
+    "city_of_birth": "Armadale",
+    "country_of_citizenship": "Australia",
+    "date_of_birth": "1982-03-19",
+    "sub_position": "Goalkeeper",
+    "position": "Goalkeeper",
+    "foot": "left",
+    "height_in_cm": 194,
+    "market_value_in_eur": 100000,
+    "highest_market_value_in_eur": 2000000,
+    "contract_expiration_date": "2023-06-30 00:00:00",
+    "agent_name": "",
+    "image_url": "https://img.a.transfermarkt.technology/portrait/header/s_4042_31_2012_1.jpg?lm=1",
+    "url": "https://www.transfermarkt.co.uk/brad-jones/profil/spieler/4042",
+    "current_club_domestic_competition_id": "NL1",
+    "current_club_name": "Feyenoord Rotterdam"
+  },
+  {
+    "player_id": 4112,
+    "first_name": "Rory",
+    "last_name": "Delap",
+    "name": "Rory Delap",
+    "last_season": 2012,
+    "current_club_id": 512,
+    "player_code": "rory-delap",
+    "country_of_birth": "England",
+    "city_of_birth": "Sutton Coldfield",
+    "country_of_citizenship": "Ireland",
+    "date_of_birth": "1976-07-06",
+    "sub_position": "Central Midfield",
+    "position": "Midfield",
+    "foot": "right",
+    "height_in_cm": 183,
+    "market_value_in_eur": "",
+    "highest_market_value_in_eur": 5500000,
+    "contract_expiration_date": "",
+    "agent_name": "",
+    "image_url": "https://img.a.transfermarkt.technology/portrait/header/s_4112_512_2009_1.jpg?lm=1",
+    "url": "https://www.transfermarkt.co.uk/rory-delap/profil/spieler/4112",
+    "current_club_domestic_competition_id": "GB1",
+    "current_club_name": "Stoke City"
+  },
+  {
+    "player_id": 4133,
+    "first_name": "Richie",
+    "last_name": "Ryan",
+    "name": "Richie Ryan",
+    "last_season": 2012,
+    "current_club_id": 1519,
+    "player_code": "richie-ryan",
+    "country_of_birth": "Ireland",
+    "city_of_birth": "Tipperary",
+    "country_of_citizenship": "Ireland",
+    "date_of_birth": "1985-01-06",
+    "sub_position": "Defensive Midfield",
+    "position": "Midfield",
+    "foot": "both",
+    "height_in_cm": 178,
+    "market_value_in_eur": "",
+    "highest_market_value_in_eur": 350000,
+    "contract_expiration_date": "",
+    "agent_name": "Topnotch Management",
+    "image_url": "https://img.a.transfermarkt.technology/portrait/header/4133-1648288446.jpg?lm=1",
+    "url": "https://www.transfermarkt.co.uk/richie-ryan/profil/spieler/4133",
+    "current_club_domestic_competition_id": "SC1",
+    "current_club_name": "Dundee United FC"
+  }
+        ];
+
+        function searchPlayer() {
+            var searchInput = document.getElementById("search").value.toLowerCase();
+            var player = jsonData.find(function(player) {
+                return player.name.toLowerCase() === searchInput;
+            });
+
+            if (player) {
+                displayPlayer(player);
+            } else {
+                // Player not found, hide the form
+                hideForm();
+            }
+        }
+
+        function displayPlayer(player) {
+            // Show the form
+            document.getElementById("playerForm").style.display = "block";
+
+            // Set the values in the <p> tags
+            document.getElementById("name").innerHTML = "<strong>Name:</strong> " + player.name;
+            document.getElementById("dob").innerHTML = "<strong>Date of Birth:</strong> " + player.date_of_birth;
+            document.getElementById("club").innerHTML = "<strong>Current Club:</strong> " + player.current_club_name;
+            document.getElementById("position").innerHTML = "<strong>Position:</strong> " + player.position;
+            document.getElementById("sub-position").innerHTML = "<strong>Sub - Position:</strong> " + player.sub_position;
+            document.getElementById("height").innerHTML = "<strong>Height:</strong> " + player.height_in_cm;
+            document.getElementById("foot").innerHTML = "<strong>Dominant Foot:</strong> " + player.foot;
+            document.getElementById("cob").innerHTML = "<strong>Country of Birth:</strong> " + player.country_of_birth;
+            document.getElementById("coc").innerHTML = "<strong>Country of Citizenship:</strong> " + player.country_of_citizenship;
+            document.getElementById("value").innerHTML = "<strong>Highest Market Value (in euros):</strong> " + player.highest_market_value_in_eur;
+
+
+            // Add more lines to set other <p> tag values
+
+            // You can add more <p> tags and set their values as needed
+        }
+
+        function hideForm() {
+            // Hide the form
+            document.getElementById("playerForm").style.display = "none";
+        }
+    </script>
+
+    
+</div>
+
+
+  <!-- footer -->
+
+<div class="footer text-center mt-5">
+</div>
+
+
+
+
+  <!-- Scripts -->
+
+</body>
+</html>
