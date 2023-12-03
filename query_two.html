@@ -29,11 +29,12 @@
         <label class="m-5" for="year">Enter Year:</label>
         <input type="number" id="year" min="1971" max="2022">
         <button onclick="searchData()">Search</button>
+    <br><br><p><i>You can search from a range of years: <b>1971</b> to <b>2023</b>.</i></p>
     </div>
 
-    <br><br><i>**  range of years is 2012-2022  **</i>
 
-    <div class="container text-center" id="winners-container"></div>
+    <div class="container" id="winners-container"></div>
+    <br><br><br>
 
     <script>
         function searchData() {
@@ -53,23 +54,23 @@
             winnersContainer.innerHTML = "<h4 class='m-5'>Competition Winners:</h4>";
 
             winnersContainer.innerHTML += "<span id='premierleague'><strong>Premier League Winners:</strong> " + data.premierleague + "</span><br>";
-            winnersContainer.innerHTML += "<span id='premierleague2'><strong>Premier League Runner-Ups:</strong> " + data.premierleague2 + "</span><br>";
+            winnersContainer.innerHTML += "<span id='premierleague2'><strong>Premier League Runner-Ups:</strong> " + data.premierleague2 + "</span><br><br>";
             winnersContainer.innerHTML += "<span id='laliga'><strong>La Liga Winners:</strong> " + data.laliga + "</span><br>";
-            winnersContainer.innerHTML += "<span id='laliga2'><strong>La Liga Runner-Ups:</strong> " + data.laliga2 + "</span><br>";
+            winnersContainer.innerHTML += "<span id='laliga2'><strong>La Liga Runner-Ups:</strong> " + data.laliga2 + "</span><br><br>";
             winnersContainer.innerHTML += "<span id='seriea'><strong>Serie A Winners:</strong> " + data.seriea + "</span><br>";
-            winnersContainer.innerHTML += "<span id='seriea2'><strong>Serie A Runner-Ups:</strong> " + data.seriea2 + "</span><br>";
+            winnersContainer.innerHTML += "<span id='seriea2'><strong>Serie A Runner-Ups:</strong> " + data.seriea2 + "</span><br><br>";
             winnersContainer.innerHTML += "<span id='bundesliga'><strong>Bundesliga Winners:</strong> " + data.bundesliga + "</span><br>";
-            winnersContainer.innerHTML += "<span id='bundesliga2'><strong>Bundesliga Runner-Ups:</strong> " + data.bundesliga2 + "</span><br>";
+            winnersContainer.innerHTML += "<span id='bundesliga2'><strong>Bundesliga Runner-Ups:</strong> " + data.bundesliga2 + "</span><br><br>";
             winnersContainer.innerHTML += "<span id='ligueone'><strong>Ligue 1 Winners:</strong> " + data.ligueone + "</span><br>";
-            winnersContainer.innerHTML += "<span id='ligueone2'><strong>Ligue 1 Runner-Ups:</strong> " + data.ligueone2 + "</span><br>";
+            winnersContainer.innerHTML += "<span id='ligueone2'><strong>Ligue 1 Runner-Ups:</strong> " + data.ligueone2 + "</span><br><br>";
             winnersContainer.innerHTML += "<span id='championsleague'><strong>UEFA Champions League Winners:</strong> " + data.championsleague + "</span><br>";
-            winnersContainer.innerHTML += "<span id='championsleague2'><strong>UEFA Champions League Runner-Ups:</strong> " + data.championsleague2 + "</span><br>";
+            winnersContainer.innerHTML += "<span id='championsleague2'><strong>UEFA Champions League Runner-Ups:</strong> " + data.championsleague2 + "</span><br><br>";
             winnersContainer.innerHTML += "<span id='clubwc'><strong>FIFA Club World Cup Winners:</strong> " + data.clubwc + "</span><br>";
-            winnersContainer.innerHTML += "<span id='clubwc2'><strong>FIFA Club World Cup Runner-Ups:</strong> " + data.clubwc2 + "</span><br>";
+            winnersContainer.innerHTML += "<span id='clubwc2'><strong>FIFA Club World Cup Runner-Ups:</strong> " + data.clubwc2 + "</span><br><br>";
             winnersContainer.innerHTML += "<span id='worldcup'><strong>FIFA World Cup Winners:</strong> " + data.worldcup + "</span><br>";
-            winnersContainer.innerHTML += "<span id='worldcup2'><strong>FIFA World Cup Runner-Ups:</strong> " + data.worldcup2 + "</span><br>";
+            winnersContainer.innerHTML += "<span id='worldcup2'><strong>FIFA World Cup Runner-Ups:</strong> " + data.worldcup2 + "</span><br><br>";
             winnersContainer.innerHTML += "<span id='olympics'><strong>Olympics Winners:</strong> " + data.olympics + "</span><br>";
-            winnersContainer.innerHTML += "<span id='olympics2'><strong>Olympics Runner-Ups:</strong> " + data.olympics2 + "</span><br>";
+            winnersContainer.innerHTML += "<span id='olympics2'><strong>Olympics Runner-Ups:</strong> " + data.olympics2 + "</span><br><br>";
         }
 
         // Your JSON data
@@ -911,7 +912,7 @@
    "ligueone2": "Lyon",
    "championsleague2": "Bayern Munich",
    "clubwc2": "TP Mazembe",
-   "worldcup2": "Spain",
+   "worldcup2": "Netherlands",
    "olympics2": "-"
  },
  {
