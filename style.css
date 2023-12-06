@@ -45,3 +45,13 @@ button{
 p{
   margin: 0;
 }
+
+#playerForm{
+  background: #000000;
+}
+
+#winners-container{
+  background: #000000;
+  width: 40%;
+}
+
