@@ -1,30 +1,53 @@
-# capstonepro
+# Soccer Data Insights: Information Retrieval Models
 
-<h2>Soccer Data Insights: Information Retrieval Models</h2> <br>
-This repository contains my capstone project focused on extracting meaningful insights from soccer data through Information Retrieval (IR) queries. The project demonstrates the application of IR techniques to provide detailed player information and competition outcomes, with a focus on user-friendly visualization and interpretation.<br><br>
+Welcome to the repository for my capstone project, *Soccer Data Insights*. This project focuses on extracting meaningful insights from soccer data using Information Retrieval (IR) techniques. It combines efficient data querying with user-friendly visualization to provide detailed player profiles and competition outcomes.
 
-<b>Features</b><br>
-IR Query 1: Player Details<br>
-Query: Search for a player's name to retrieve their details.<br><br>
-Outcome: Displays information such as:<br>
-Player Position<br>
-Current Club<br>
-Dominant Foot<br>
-Last Season Played<br>
-Market Valuation<br><br>
-IR Query 2: Competitions and Teams<br>
-Query: Retrieve the number of competitions held and identify the winning and runner-up teams in a specified year.<br>
-Outcome: Provides a summary of notable tournaments, including winners and runners-up for the year.<br><br>
+Explore the live project here: [Soccer Data Insights](https://msameer10.github.io/capstonepro)
 
+## Features
 
-<b>Implementation Details</b><br>
-This website was using HTML and JavaScript to interact with the data:<br>
+### 1. Player Details
+- **Query**: Search for a player's name to retrieve their professional details.
+- **Outcome**: Displays information such as:
+  - Player Position
+  - Current Club
+  - Dominant Foot
+  - Last Season Played
+  - Market Valuation
 
-Soccer data stored in .csv format was converted to JSON for seamless use in JavaScript.<br>
-The website is hosted on GitHub Pages for easy access:<br>
-https://msameer10.github.io/capstonepro<br><br>
+### 2. Competitions and Teams
+- **Query**: Retrieve the number of competitions held and identify the winners and runners-up for a specific year.
+- **Outcome**: Summarizes notable tournaments, including their winners and runners-up for the selected year.
 
-<b>Key Highlights</b><br><br>
-Player Information Retrieval: Enables users to search for players and view their professional details.<br>
-Winners and Runners by Year: Provides insights into the outcomes of major European and international soccer tournaments in a given year.<br>
-Feel free to explore the project or contribute!
+## Implementation Details
+
+This project utilizes HTML and JavaScript for a responsive and interactive user experience. Key implementation aspects include:
+- **Data Handling**: Soccer data, initially stored in `.csv` format, was converted to JSON to enable seamless integration with JavaScript.
+- **Hosting**: The website is deployed on GitHub Pages for easy accessibility.
+
+## Key Highlights
+
+- **Player Information Retrieval**: Allows users to search for players by name and view detailed professional data, enabling a deeper understanding of player profiles.
+- **Tournament Insights**: Displays winners and runners-up of major European and international soccer tournaments for a given year, providing a quick overview of the competition landscape.
+
+## How to Explore the Project
+
+1. Visit the live website: [Soccer Data Insights](https://msameer10.github.io/capstonepro)
+2. Enter a player’s name or a year in the respective search boxes to retrieve detailed information or tournament outcomes.
+3. Enjoy the interactive and informative experience!
+
+## Technologies Used
+
+- **Languages**: HTML, JavaScript
+- **Data Formats**: CSV (converted to JSON for implementation)
+- **Hosting**: GitHub Pages
+
+## Future Enhancements
+
+- Integration with real-time soccer data APIs for dynamic updates.
+- Advanced filtering and sorting options for players and tournaments.
+- Expanded visualization capabilities using charting libraries.
+
+---
+
+Feel free to explore, use, or contribute to this project.
