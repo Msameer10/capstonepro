@@ -4,7 +4,9 @@
         # 3. Data Loading: Connects to a MySQL database using the sqlalchemy library and loads the cleaned data into a target table.
         # 4. Error Logging: Includes basic error-handling mechanisms to log issues during the ETL process.
 
-
+# pandas: For data manipulation.
+# sqlalchemy: For database connection and operations.
+# pymysql: For MySQL support in SQLAlchemy.
 
 import pandas as pd
 from sqlalchemy import create_engine
