@@ -1,6 +1,6 @@
 # capstonepro
 
-Soccer Data Insights: Information Retrieval Models
+Soccer Data Insights: Information Retrieval Models <br>
 This repository contains my capstone project focused on extracting meaningful insights from soccer data through Information Retrieval (IR) queries. The project demonstrates the application of IR techniques to provide detailed player information and competition outcomes, with a focus on user-friendly visualization and interpretation.
 
 Features
