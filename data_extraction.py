@@ -30,11 +30,11 @@ def transform_data(data):
         # Standardize column names
         data.columns = [col.strip().lower().replace(' ', '_') for col in data.columns]
         
-        # Example: Convert date column to a standard format
+        # Convert date column to a standard format
         if 'matchday_date' in data.columns:
             data['matchday_date'] = pd.to_datetime(data['matchday_date'])
         
-        # Example: Normalize player names
+        # Normalize player names
         if 'player_name' in data.columns:
             data['player_name'] = data['player_name'].str.title()
         
